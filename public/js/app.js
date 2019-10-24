@@ -1873,17 +1873,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Hello',
   data: function data() {
     return {
+      debug: false,
       id: 0,
       msg: 'Hey Nic Raboy'
     };
   },
   created: function created() {
     this.id = this.$route.params.id;
+
+    if (this.$route.query.debug) {
+      this.debug = this.$route.query.debug;
+    }
   },
   methods: {
     navigate: function navigate() {
@@ -1965,6 +1971,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
 //
 //
 //
@@ -34919,7 +34926,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "hello" }, [
     _c("h1", [_vm._v(_vm._s(_vm.msg) + ", your id is " + _vm._s(_vm.id))]),
-    _vm._v(" "),
+    _vm._v("\n    debug " + _vm._s(_vm.debug) + "\n    "),
     _c(
       "a",
       {
@@ -35064,6 +35071,33 @@ var render = function() {
               "div",
               { staticClass: "col-md-6 text-right" },
               [
+                _c(
+                  "router-link",
+                  {
+                    attrs: {
+                      to: {
+                        name: "hello" + _vm.title,
+                        params: { id: _vm.title }
+                      }
+                    }
+                  },
+                  [_vm._v("Navigate to Page2")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    attrs: {
+                      to: {
+                        name: "hello",
+                        params: { id: 1234 },
+                        query: { debug: true }
+                      }
+                    }
+                  },
+                  [_vm._v("Navigate to Page2")]
+                ),
+                _vm._v(" "),
                 _c("router-link", { attrs: { to: "/hello/" + _vm.title } }, [
                   _vm._v("View more")
                 ]),
@@ -35175,7 +35209,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("p", [_vm._v("Hello World! ")])
+  return _c("hello")
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -9,7 +9,8 @@
         </b-card-text>
          <div class="row">
              <div class="col-md-6 text-right">
-
+                 <router-link :to="{ name: 'hello'+title, params: { id: title } }">Navigate to Page2</router-link>
+                 <router-link :to="{ name: 'hello', params: { id: 1234 }, query: { debug: true }}">Navigate to Page2</router-link>
                  <router-link v-bind:to="'/hello/' + title ">View more</router-link>
                  <b-button target="_blank" v-bind:href="contributors_url" size="sm" variant="primary">Contributors</b-button>
              </div>
