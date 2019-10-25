@@ -1,0 +1,6 @@
+<template>
+  <contributors></contributors>
+
+</template>
+
+

@@ -23,7 +23,7 @@ class AppController extends Controller
   {
 
 
-      return View('spa');
+      return View('home');
 
 
   }//index

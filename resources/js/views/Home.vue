@@ -1,7 +1,7 @@
 <template>
     <div>
-     <h1>{{ msg }}</h1>
-       Hello {{ $route.params.name }}
+     <h4>{{ msg }}</h4>
+      
      <div class="row">
       <div class="col-md-4" v-for="item in info.data">
        <repos
@@ -22,7 +22,7 @@
 </template>
 <script>
     import axios from 'axios';
-
+    import router from '../router'
   export default {
     name: "Home",
         data(){

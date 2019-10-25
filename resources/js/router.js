@@ -1,12 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import home from './components/Home'
-import hello from './components/Hello'
+import contributors from './components/Contributors'
 import repos from './components/Repos'
-// import blog from '@/components/blog'
-// import services from '@/components/services'
-// import contact from '@/components/contact'
-// import details from '@/components/details'
+
 
 Vue.use(VueRouter);
 
@@ -19,11 +16,12 @@ export default new VueRouter({
                 component: repos
             },
             {
-                path: 'hello/:id',
-                name: 'hello',
-                component: hello,
+                path: '/contributors/:id',
+                name: 'contributors',
+                component: contributors,
                 props: true
-            }
+            },
+           
         ],
         mode: 'history'
     }

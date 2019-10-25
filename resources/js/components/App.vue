@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h1>Vue Router Demo App</h1>
+        <h1>Viva Git App</h1>
 
         <p>
             <router-link :to="{ name: 'home' }">Home</router-link> |
-            <router-link :to="{ name: 'hello' }">Hello World</router-link>
+            <router-link :to="{ name: 'contributors' }">contributors</router-link>
         </p>
 
         <div class="container">

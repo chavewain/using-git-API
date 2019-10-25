@@ -11,17 +11,17 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 // import App from './components/App';
 
 Vue.use(BootstrapVue)
-
 Vue.use(VueRouter)
 
+// Paginas
 import App from './views/App'
-import Hello from './views/Hello'
 import Home from './views/Home'
+import contributors from './views/Contributors'
 
 
-
+// Componentes
 Vue.component('repos', require('./components/Repos.vue').default);
-Vue.component('hello', require('./components/Hello.vue').default);
+Vue.component('contributors', require('./components/Contributors.vue').default);
 Vue.component('App', require('./components/App.vue').default);
 
 
@@ -37,10 +37,11 @@ const router = new VueRouter({
             component: Home
         },
         {
-            path: '/hello',
-            name: 'hello',
-            component: Hello,
+            path: '/contributors/:id',
+            name: 'contributors',
+            component: contributors,
         },
+        
     ],
 });
 

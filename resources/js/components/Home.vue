@@ -1,6 +1,6 @@
 <template>
     <div>
-     <h1>{{ msg }}</h1>
+     <h4>{{ msg }}</h4>
        Hello {{ $route.params.name }}
      <div class="row">
       <div class="col-md-4" v-for="item in info.data">
